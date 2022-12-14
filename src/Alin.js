@@ -1,7 +1,9 @@
+import Main from './AlinComponents/Main';
+
 const Alin = () => {
   return (
     <div>
-      <div>Pag1</div>
+      <Main />
     </div>
   );
 };
