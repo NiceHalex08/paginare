@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 const Pagination = (props) => {
   const { totalBooks, paginate, booksPerPg } = props;
   const pageNum = [];
@@ -9,14 +7,14 @@ const Pagination = (props) => {
   }
   console.log(totalBooks);
   return (
-    <div>
-      <nav>
-        {pageNum.map((el) => (
-          <li key={el}>
-            <a onClick={() => paginate(el)}>{el}</a>
-          </li>
-        ))}
-      </nav>
+    <div className='center'>
+      <div className='pagination'>
+        <nav>
+          {pageNum.map((el) => (
+            <a1 onClick={() => paginate(el)}>{el}</a1>
+          ))}
+        </nav>
+      </div>
     </div>
   );
 };

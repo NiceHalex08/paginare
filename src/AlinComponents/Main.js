@@ -7,7 +7,7 @@ const Main = () => {
   const [search, setSearch] = useState('');
   const [book, setBook] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const [booksPerPg, setBooksPerPg] = useState(15);
+  const [booksPerPg] = useState(10);
   const handleClick = () => {
     axios
       .get(
@@ -25,13 +25,16 @@ const Main = () => {
   const paginate = (pageNum) => setCurrentPage(pageNum);
   return (
     <div>
-      <div>
+      <div className='searchBar'>
         <input
+          className='input'
           type='text'
           value={search}
           onChange={(e) => setSearch(e.target.value)}
         />
-        <button onClick={() => handleClick()}>Search</button>
+        <button className='buttonSearch' onClick={() => handleClick()}>
+          Search
+        </button>
       </div>
       <div>
         <BooksList book={currentBook} />

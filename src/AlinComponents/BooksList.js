@@ -7,9 +7,9 @@ const BooksList = (props) => {
 
   return (
     <div>
-      <div>
+      <div className='bookList'>
         {book.map((el) => (
-          <div>
+          <div className='book'>
             <img
               src={
                 el.volumeInfo.imageLinks &&
