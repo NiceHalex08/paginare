@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
     return (
         <footer>
-            <p>Paduret Critina Oana</p>
+            <p>Strinbei Oana</p>
         </footer>
     );
 };

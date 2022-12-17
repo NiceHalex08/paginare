@@ -27,10 +27,10 @@
   background-color: #937666;
 }
 .main {
-  display: flex;
+  /*display: flex;
   flex: 1;
   min-height: 736px;
-  height: auto;
+  height: auto;*/
 }
 .searchBar {
   margin-top: 10px;
@@ -90,5 +90,67 @@
   text-decoration: none;
 }
 .center {
+  text-align: center;
+}
+/*Oana*/
+body{
+  margin:0;
+  width:100%;
+}
+
+.containerOana{
+  display: grid;
+  grid-template-rows: 10% 70% auto 10%;
+  grid-template-columns: 30% auto;
+  grid-template-areas:
+  'header header'
+  'searchOana mainPage'
+  'back mainpage'
+  'footer footer';
+  width:100vw;
+  height:100vh;
+}
+
+.headerOana{
+  grid-area: header;
+  background-color: rgb(169, 210, 248);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.mainPage{
+  grid-area: mainPage;
+  overflow: auto;
+}
+.seachOana{
+  grid-area: searchOana;
+  overflow: hidden;
+}
+.footerOana{
+  grid-area: footer;
+  background-color: rgb(169, 210, 248);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+}
+.main{
+  grid-area: back;
+  overflow: hidden;
+}
+.inputO{
+  margin-top: 40px;
+  margin-left: 40px;
+  border-radius: 10px;
+  height: 20px;
+  text-align: center;
+}
+.buttonS{
+  border-radius: 10px;
+  height: 30px;
+  margin-left: 40px;
   text-align: center;
 }

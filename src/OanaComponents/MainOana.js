@@ -2,6 +2,9 @@ import {useState, useEffect } from "react";
 import axios from 'axios';
 import Posts from './Posts';
 import PaginationOana from './PaginationOana';
+import Header from '../components/Header';
+import Footer from "../components/Footer";
+import Main1 from "../Main1";
 
 const MainOana = () => {
 
@@ -41,7 +44,9 @@ const MainOana = () => {
 
     return (
         <div className="containerOana">
-            <h1 className="h1Oana">Search Api</h1>
+            <div className="headerOana">
+            <Header/>
+            </div>
             <div className='searchOana'>
             <input
                 className='inputO'
@@ -49,10 +54,12 @@ const MainOana = () => {
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
                 />
+                <br></br><br></br>
             <button className='buttonS' onClick={() => handleClick()}>
           Search
         </button>
       </div>
+      <div className="mainPage">
             <Posts 
                 posts={currentPost} 
                 loading={loading} 
@@ -62,6 +69,11 @@ const MainOana = () => {
                 postPerPage={postPerPage}
                 paginate={paginate}
       />
+      </div>
+      <Main1/>
+      <div className="footerOana">
+      <Footer/>
+      </div>
         </div>
     );
 }

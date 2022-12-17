@@ -3,7 +3,7 @@ import React from 'react';
 const Header = () => {
     return (
         <header>
-            <p>Proiect paginare</p>
+            <h1>Search Api</h1>
         </header>
     )
 }
