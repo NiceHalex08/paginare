@@ -1,8 +1,12 @@
+import MainOana from './OanaComponents/MainOana';
+import './App.css';
+
 const Oana = () => {
-  return (
+  return(
     <div>
-      <div>Pag1</div>
+      <MainOana/>
     </div>
   );
 };
+
 export default Oana;
