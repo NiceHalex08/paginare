@@ -10,18 +10,10 @@ const MainOana = () => {
 
     const[posts, setPosts] = useState([]);
     const[loading, setLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1);
-    const [postPerPage] = useState(10);
     const [search, setSearch] = useState('');
-
-    const handleClick = () => {
-        axios
-          .get(
-            'https://jsonplaceholder.typicode.com/posts' + search
-          )
-          .then((res) => setPosts(res.data))
-          .catch((error) => console.log(error));
-      };
+    const [currentPage, setCurrentPage] = useState(1);
+    const [postPerPage] = useState(6);
+   
 
     useEffect(() => {
         const fetchPost = async () =>{
@@ -35,12 +27,31 @@ const MainOana = () => {
         fetchPost();
     }, [currentPage]);
 
- 
+    const handleClick = () => {
+            setLoading(true);
+            const res = posts.filter(({title}) => title.toLowerCase().includes(search))
+            setPosts(res);
+            setLoading(false);
+            console.log(res);
+   }
+
     const indexOfLastPost = currentPage * postPerPage;
     const indexOfFirstPost = indexOfLastPost - postPerPage;
-    const currentPost = posts.slice(indexOfFirstPost, indexOfLastPost);
+    const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
     const paginate = (pageNumber) =>  setCurrentPage(pageNumber);
+
+    const previousPage = () => {
+      if(currentPage !== 1){
+        setCurrentPage(currentPage - 1);
+      }
+    };
+
+    const nextPage = () => {
+      if(currentPage !== Math.ceil(posts.length/postPerPage)){
+        setCurrentPage(currentPage + 1);
+      }
+    };
 
     return (
         <div className="containerOana">
@@ -52,6 +63,7 @@ const MainOana = () => {
                 className='inputO'
                 type='text'
                 value={search}
+                placeholder='Search title...'
                 onChange={(e) => setSearch(e.target.value)}
                 />
                 <br></br><br></br>
@@ -61,13 +73,15 @@ const MainOana = () => {
       </div>
       <div className="mainPage">
             <Posts 
-                posts={currentPost} 
+                posts={currentPosts} 
                 loading={loading} 
-                currentPage={currentPage}/>
+              />
             <PaginationOana
                 totalPosts={posts.length}
                 postPerPage={postPerPage}
                 paginate={paginate}
+                previousPage={previousPage}
+                nextPage={nextPage}
       />
       </div>
       <Main1/>

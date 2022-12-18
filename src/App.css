@@ -155,3 +155,23 @@ body{
   margin-left: 40px;
   text-align: center;
 }
+.div-pagination{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+.pagination-container li{
+  float:left;
+  text-align: center;
+  list-style: none;
+  margin-right: 10px;
+  width: 40px;
+  height:20px;
+  border: 1px solid grey;
+  font-size: 18px;
+}
+.page-number:hover{
+  background-color: #b6eaf3;
+}
