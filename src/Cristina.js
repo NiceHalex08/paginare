@@ -1,8 +1,6 @@
+import Container from './Cristina/Container';
+
 const Cristina = () => {
-  return (
-    <div>
-      <div>Pag1</div>
-    </div>
-  );
+  return <Container />;
 };
 export default Cristina;
