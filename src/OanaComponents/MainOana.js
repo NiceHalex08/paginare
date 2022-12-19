@@ -25,7 +25,7 @@ const MainOana = () => {
         }
 
         fetchPost();
-    }, [currentPage]);
+    }, []);
 
     const handleClick = () => {
             setLoading(true);
@@ -40,6 +40,7 @@ const MainOana = () => {
     const currentPosts = posts.slice(indexOfFirstPost, indexOfLastPost);
 
     const paginate = (pageNumber) =>  setCurrentPage(pageNumber);
+    
 
     const previousPage = () => {
       if(currentPage !== 1){

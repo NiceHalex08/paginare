@@ -1,17 +1,21 @@
 import React from 'react';
 
-const PaginationOana = ({postsPerPage, totalPosts, paginate, previousPage, nextPage}) =>{
+const PaginationOana = (props) =>{
+    const {postsPerPage, totalPosts, paginate, previousPage, nextPage} = props;
 
     const pageNumbers = [];
-
+    console.log(totalPosts);
+    console.log(postsPerPage);
     for(let i=1; i<= Math.ceil(totalPosts / postsPerPage); i++){
         pageNumbers.push(i);
         console.log(i);
     }
 
-
+    
     return(
+        
         <div className='div-pagination'>
+            {totalPosts > 1  &&
             <ul className='pagination-container'>
                 <li onClick={previousPage} className='page-number'>
                     Prev
@@ -27,7 +31,9 @@ const PaginationOana = ({postsPerPage, totalPosts, paginate, previousPage, nextP
                     Next
                 </li>
             </ul>
+             }
         </div>
+               
         
     )
 }
