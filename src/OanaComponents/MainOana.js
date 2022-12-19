@@ -33,6 +33,7 @@ const MainOana = () => {
             setPosts(res);
             setLoading(false);
             console.log(res);
+            setCurrentPage(1);
    }
 
     const indexOfLastPost = currentPage * postPerPage;
@@ -53,7 +54,8 @@ const MainOana = () => {
         setCurrentPage(currentPage + 1);
       }
     };
-
+    
+    console.log(posts);
     return (
         <div className="containerOana">
             <div className="headerOana">
