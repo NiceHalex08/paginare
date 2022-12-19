@@ -1,6 +1,5 @@
 const BooksList = (props) => {
   const { book } = props;
-  console.log(book);
 
   // let imageLink =
   //   el.volumeInfo.imageLinks && el.volumeInfo.imageLinks.smallThumbnail;

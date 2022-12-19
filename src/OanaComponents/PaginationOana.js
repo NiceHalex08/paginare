@@ -1,42 +1,51 @@
 import React from 'react';
 
-const PaginationOana = (props) =>{
-    const {postsPerPage, totalPosts, paginate, previousPage, nextPage} = props;
+const PaginationOana = (props) => {
+  const {
+    postPerPage,
+    totalPosts,
+    paginate,
+    previousPage,
+    nextPage,
+    currentPage,
+  } = props;
+  const pageNumbers = [];
 
-    const pageNumbers = [];
-    console.log(totalPosts);
-    console.log(postsPerPage);
-    for(let i=1; i<= Math.ceil(totalPosts / postsPerPage); i++){
-        pageNumbers.push(i);
-        console.log(i);
-    }
-
-    
-    return(
-        
-        <div className='div-pagination'>
-            {totalPosts > 1  &&
-            <ul className='pagination-container'>
-                <li onClick={previousPage} className='page-number'>
-                    Prev
-                </li>
-                {pageNumbers.map((number) => (
-                    <li key={number} 
-                        onClick={() => paginate(number)}
-                        className='page-number'>
-                    {number}  {console.log(number)}
-                    </li>
-                ))}
-                <li onClick={nextPage} className='page-number'>
-                    Next
-                </li>
-            </ul>
-             }
-        </div>
-               
-        
-    )
-}
+  for (let i = 1; i <= Math.ceil(totalPosts / postPerPage); i++) {
+    pageNumbers.push(i);
+  }
+  //adaugat culoare pe currentPage
+  return (
+    <div className='div-pagination'>
+      {totalPosts > 1 && (
+        <ul className='pagination-container'>
+          <button
+            onClick={previousPage}
+            className='page-number'
+            disabled={currentPage === 1}
+          >
+            <li>Prev</li>
+          </button>
+          {pageNumbers.map((number) => (
+            <li
+              key={number}
+              onClick={() => paginate(number)}
+              className='page-number'
+            >
+              {number}
+            </li>
+          ))}
+          <button
+            disabled={currentPage === pageNumbers.length}
+            onClick={nextPage}
+            className='page-number'
+          >
+            <li>Next</li>
+          </button>
+        </ul>
+      )}
+    </div>
+  );
+};
 
 export default PaginationOana;
-

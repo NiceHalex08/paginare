@@ -1,7 +1,8 @@
 import { useState } from 'react';
-import axios from 'axios';
+
 import BooksList from './BooksList';
 import Pagination from './Pagination';
+import { ax } from '../helpers/helpers';
 
 const Main = () => {
   const [search, setSearch] = useState('');
@@ -9,15 +10,7 @@ const Main = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [booksPerPg] = useState(10);
   const handleClick = () => {
-    axios
-      .get(
-        'https://www.googleapis.com/books/v1/volumes?q=' +
-          search +
-          '&key=AIzaSyBE9QyO8Err7HP8zeGE9UIsJp0MosdQnuU' +
-          '&maxResults=40',
-      )
-      .then((res) => setBook(res.data.items))
-      .catch((error) => console.log(error));
+    ax(setBook, search);
   };
   const indexOfLastBook = currentPage * booksPerPg;
   const indexOfFirstBook = indexOfLastBook - booksPerPg;
@@ -43,6 +36,7 @@ const Main = () => {
         totalBooks={book.length}
         booksPerPg={booksPerPg}
         paginate={paginate}
+        currentPage={currentPage}
       />
     </div>
   );
