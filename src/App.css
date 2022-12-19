@@ -26,11 +26,11 @@
   height: 15px;
   background-color: #937666;
 }
-.main {
-  /*display: flex;
+.mainA {
+  display: flex;
   flex: 1;
   min-height: 736px;
-  height: auto;*/
+  height: auto;
 }
 .searchBar {
   margin-top: 10px;
@@ -93,42 +93,41 @@
   text-align: center;
 }
 /*Oana*/
-body{
-  margin:0;
-  width:100%;
+body {
+  margin: 0;
+  width: 100%;
 }
 
-.containerOana{
+.containerOana {
   display: grid;
   grid-template-rows: 10% 70% auto 10%;
   grid-template-columns: 30% auto;
   grid-template-areas:
-  'header header'
-  'searchOana mainPage'
-  'back mainPage'
-  'footer footer';
-  width:100vw;
-  height:100vh;
+    'header header'
+    'searchOana mainPage'
+    'back mainPage'
+    'footer footer';
+  width: 100vw;
+  height: 100vh;
 }
 
-.headerOana{
+.headerOana {
   grid-area: header;
   background-color: rgb(169, 210, 248);
   overflow: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
-.mainPage{
+.mainPage {
   grid-area: mainPage;
   overflow: auto;
 }
-.seachOana{
+.seachOana {
   grid-area: searchOana;
   overflow: hidden;
 }
-.footerOana{
+.footerOana {
   grid-area: footer;
   background-color: rgb(169, 210, 248);
   overflow: hidden;
@@ -137,42 +136,41 @@ body{
   align-items: center;
   font-size: 24px;
 }
-.main{
+.main {
   grid-area: back;
   overflow: hidden;
 }
-.inputO{
+.inputO {
   margin-top: 40px;
   margin-left: 40px;
   border-radius: 10px;
   height: 25px;
   text-align: center;
 }
-.buttonS{
+.buttonS {
   border-radius: 10px;
   height: 30px;
-  width:80px;
+  width: 80px;
   margin-left: 40px;
   text-align: center;
 }
-.div-pagination{
+.div-pagination {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  
 }
-.pagination-container li{
-  float:left;
+.pagination-container li {
+  float: left;
   text-align: center;
   list-style: none;
   margin-right: 10px;
   width: 40px;
-  height:20px;
+  height: 20px;
   border: 1px solid grey;
   font-size: 18px;
   cursor: pointer;
 }
-.page-number:hover{
+.page-number:hover {
   background-color: #b6eaf3;
 }
