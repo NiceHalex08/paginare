@@ -25,7 +25,7 @@ const MainOana = () => {
         }
 
         fetchPost();
-    }, []);
+    }, [currentPage]);
 
     const handleClick = () => {
             setLoading(true);
