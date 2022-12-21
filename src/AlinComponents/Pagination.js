@@ -13,7 +13,7 @@ const Pagination = (props) => {
           {pageNum.map((el) => (
             <button
               onClick={() => paginate(el)}
-              style={{ color: el === currentPage ? 'red' : 'blue' }}
+              style={{ color: el === currentPage ? 'white' : '#937666' }}
             >
               {el}
             </button>
